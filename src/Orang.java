@@ -1,11 +1,15 @@
 
 public class Orang {
 	private String nama;
-	private byte umur;
+	private int umur;
 	
-	public Orang(String nama,byte umur) {
+	public Orang(String nama,int umur) {
 		this.nama = nama;
 		this.umur = umur;
+	}
+	public Orang() {
+		this.nama = null;
+		this.umur = 0;
 	}
 	public String getNama() {
 		return nama;
@@ -13,10 +17,10 @@ public class Orang {
 	public void setNama(String nama) {
 		this.nama = nama;
 	}
-	public byte getUmur() {
+	public int getUmur() {
 		return umur;
 	}
-	public void setUmur(byte umur) {
+	public void setUmur(int umur) {
 		this.umur = umur;
 	}
 }
