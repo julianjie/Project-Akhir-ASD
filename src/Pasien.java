@@ -26,6 +26,6 @@ public class Pasien extends Orang{
 		this.noPasien = noPasien;
 	}
 	public String tampil() {
-		return "\t\t"+getNoPasien()+"\t\t"+ getNama() +"\t"+ getUmur();
+		return "\t\t"+getNoPasien()+"\t\t"+ getNama() +"\t\t"+ getUmur();
 	}
 }

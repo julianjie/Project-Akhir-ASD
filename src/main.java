@@ -13,13 +13,13 @@ public class main {
 		Queue<Pasien> booking = new LinkedList<Pasien>();
 		Queue<Pasien> qAkhir = new LinkedList<Pasien>();
 
-		System.out.println("==============================================");
-		System.out.println("===========APLIKASI ANTRI PASIEN==============");
-		System.out.println("==============================================");
+		System.out.println("======================================================");
+		System.out.println("===============APLIKASI ANTRI PASIEN==================");
+		System.out.println("======================================================");
 		System.out.print("\tMASUKAN JUMLAH PASIEN = ");
 		int jumlah = Integer.parseInt(br.readLine());
 		Pasien p[] = new Pasien[jumlah];	
-		System.out.println("==============================================");
+		System.out.println("======================================================");
 		
 		for (int j = 0; j < p.length; j++) {
 			p[j] = new Pasien();
@@ -36,29 +36,30 @@ public class main {
 				booking.add(p[j]);
 			else
 				walkin.add(p[j]);
-			System.out.println("----------------------------------------------");
+			if (j < p.length-1)
+				System.out.println("------------------------------------------------------");
 		}
 		
-		System.out.println("==============================================");
+		System.out.println("======================================================");
 		System.out.println("\t\tLIST WALK-IN");
-		System.out.println("==============================================");
-		System.out.println("No Antrian\tNo PASIEN\tNAMA\tUMUR");
+		System.out.println("======================================================");
+		System.out.println("No Antrian\tNo PASIEN\tNAMA\t\tUMUR");
 		tampilQueue(walkin);
-		System.out.println("==============================================");
+		System.out.println("======================================================");
 
 		System.out.println("\t\tLIST BOOKING");
-		System.out.println("==============================================");
-		System.out.println("No Antrian\tNo PASIEN\tNAMA\tUMUR");
+		System.out.println("======================================================");
+		System.out.println("No Antrian\tNo PASIEN\tNAMA\t\tUMUR");
 		tampilQueue(booking);
-		System.out.println("==============================================");
+		System.out.println("======================================================");
 
 		System.out.println("\t\tQUEUE AKHIR");
-		System.out.println("==============================================");
-		System.out.println("No Antrian\tNo PASIEN\tNAMA\tUMUR");
+		System.out.println("======================================================");
+		System.out.println("No Antrian\tNo PASIEN\tNAMA\t\tUMUR");
 		//PENGABUNGAN QUEUE
 		gabungQueue(walkin,booking,qAkhir);
 		tampilQueue(qAkhir);
-		System.out.println("==============================================");
+		System.out.println("======================================================");
 
 	}
 	public static void tampilQueue(Queue<Pasien> queue) {
