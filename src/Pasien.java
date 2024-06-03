@@ -1,23 +1,9 @@
+class Pasien {
+	private String noPasien;
+	private String nama;
+	private int umur;
+	private String booking;
 
-public class Pasien extends Orang{
-	private String noPasien,booking;
-	
-	public Pasien(String noPasien,String nama,int umur,String booking) {
-		super(nama, umur);
-		this.noPasien = noPasien;
-		this.booking = booking;
-	}
-	public String getBooking() {
-		return booking;
-	}
-	public void setBooking(String booking) {
-		this.booking = booking;
-	}
-	public Pasien() {
-		super();
-		this.noPasien = null;
-	}
-	
 	public String getNoPasien() {
 		return noPasien;
 	}
@@ -25,7 +11,32 @@ public class Pasien extends Orang{
 	public void setNoPasien(String noPasien) {
 		this.noPasien = noPasien;
 	}
+
+	public String getNama() {
+		return nama;
+	}
+
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+
+	public int getUmur() {
+		return umur;
+	}
+
+	public void setUmur(int umur) {
+		this.umur = umur;
+	}
+
+	public String getBooking() {
+		return booking;
+	}
+
+	public void setBooking(String booking) {
+		this.booking = booking;
+	}
+
 	public String tampil() {
-		return "\t\t"+getNoPasien()+"\t\t"+ getNama() +"\t\t"+ getUmur();
+		return String.format("%-12s%-20s%-4d", noPasien, nama, umur);
 	}
 }
