@@ -14,17 +14,18 @@ public class main {
         Queue<Pasien> qAkhir = new LinkedList<Pasien>();
 
         while (true) {
-            System.out.println("==============================================");
-            System.out.println("===========APLIKASI ANTRI PASIEN==============");
-            System.out.println("==============================================");
+            System.out.println("================================================");
+            System.out.println("=============APLIKASI ANTRI PASIEN==============");
+            System.out.println("================================================");
             System.out.println("1. Tambah Data Pasien");
             System.out.println("2. Lihat Antrian Pasien");
             System.out.println("3. Cari Data Pasien");
             System.out.println("4. Hapus Data Pasien");
             System.out.println("5. Keluar");
             System.out.print("Pilih menu: ");
-            int pilihan = Integer.parseInt(br.readLine());
 
+            int pilihan = Integer.parseInt(br.readLine());
+            System.out.println();
             switch (pilihan) {
                 case 1:
                     tambahPasien(br, walkin, booking);
@@ -39,6 +40,7 @@ public class main {
                     hapusPasien(walkin, booking, qAkhir, br);
                     break;
                 case 5:
+                    System.out.println("~~Terima Kasih Telah Menggunakan Applikasi Ini~~");
                     System.exit(0);
                 default:
                     System.out.println("Pilihan tidak valid!");
@@ -50,7 +52,7 @@ public class main {
         System.out.print("Masukan jumlah pasien: ");
         int jumlah = Integer.parseInt(br.readLine());
         Pasien p[] = new Pasien[jumlah];
-        System.out.println("==============================================");
+        System.out.println("================================================");
 
         for (int j = 0; j < p.length; j++) {
             p[j] = new Pasien();
@@ -67,30 +69,31 @@ public class main {
                 booking.add(p[j]);
             else
                 walkin.add(p[j]);
-            System.out.println("----------------------------------------------");
+            if (j< p.length-1)
+            System.out.println("------------------------------------------------");
         }
     }
 
     public static void lihatAntrian(Queue<Pasien> walkin, Queue<Pasien> booking, Queue<Pasien> qAkhir) {
-        System.out.println("==============================================");
+        System.out.println("================================================");
         System.out.println("\t\tLIST WALK-IN");
-        System.out.println("==============================================");
+        System.out.println("================================================");
         System.out.printf("%-12s%-12s%-20s%-4s\n", "No Antrian", "No PASIEN", "NAMA", "UMUR");
         tampilQueue(walkin);
-        System.out.println("==============================================");
+        System.out.println("================================================");
 
         System.out.println("\t\tLIST BOOKING");
-        System.out.println("==============================================");
+        System.out.println("================================================");
         System.out.printf("%-12s%-12s%-20s%-4s\n", "No Antrian", "No PASIEN", "NAMA", "UMUR");
         tampilQueue(booking);
-        System.out.println("==============================================");
+        System.out.println("================================================");
 
         System.out.println("\t\tQUEUE AKHIR");
-        System.out.println("==============================================");
+        System.out.println("================================================");
         System.out.printf("%-12s%-12s%-20s%-4s\n", "No Antrian", "No PASIEN", "NAMA", "UMUR");
         gabungQueue(walkin, booking, qAkhir);
         tampilQueue(qAkhir);
-        System.out.println("==============================================");
+        System.out.println("================================================");
     }
 
     public static void tampilQueue(Queue<Pasien> queue) {
